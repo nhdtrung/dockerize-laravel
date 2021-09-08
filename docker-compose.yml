@@ -1,0 +1,65 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: php.dockerfile
+    container_name: app
+    working_dir: /var/www
+    volumes:
+      - ./src/:/var/www/
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  webserver:
+    image: nginx:alpine
+    container_name: webserver
+    working_dir: /var/www
+    ports:
+      - "8001:80"
+      - "443:443"
+    volumes:
+      - ./src/:/var/www
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  db:
+    image: mysql:5.7
+    command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci','--default-authentication-plugin=mysql_native_password']
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: secret
+    ports:
+        - "33061:3306"
+    volumes:
+      - ./docker/db/dbdata:/var/lib/mysql
+      - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+    networks:
+      - app-network
+
+  composer:
+    build:
+      context: .
+      dockerfile: composer.dockerfile
+    container_name: composer
+    volumes:
+      - ./src:/var/www
+    working_dir: /var/www
+    depends_on:
+      - app
+    # command: ["composer", "composer install --ignore-platform-reqs"]
+    entrypoint: ['composer', '--ignore-platform-reqs']
+    networks:
+      - app-network 
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local
