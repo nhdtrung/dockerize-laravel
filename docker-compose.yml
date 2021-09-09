@@ -1,37 +1,54 @@
 version: '3'
 services:
+
+  #PHP Service
   app:
     build:
       context: ./
       dockerfile: php.dockerfile
+    depends_on:
+      - db
     container_name: app
     working_dir: /var/www
+    environment:
+      APP_ENV: local
+      XDEBUG_CONFIG: remote_host=host.docker.internal remote_port=9000 # for xdebug
+      PHP_IDE_CONFIG: serverName=docker # for xdebug
     volumes:
       - ./src/:/var/www/
+      - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+      - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini # comment out this will disable xdebug
+      - ./docker/supervisord/supervisord.conf:/etc/supervisor/supervisord.conf # mapping supervisord.conf
     networks:
       - app-network
-    restart: unless-stopped
 
+  #Nginx Service
   webserver:
     image: nginx:alpine
     container_name: webserver
     working_dir: /var/www
+    depends_on:
+      - app
     ports:
       - "8001:80"
       - "443:443"
     volumes:
       - ./src/:/var/www
+      - ./logs:/var/log/nginx
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
     networks:
       - app-network
-    restart: unless-stopped
 
+  #Database
   db:
-    image: mysql:5.7
+    image: mysql:5.7.22
+    container_name: db 
     command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci','--default-authentication-plugin=mysql_native_password']
     environment:
       MYSQL_DATABASE: laravel
       MYSQL_ROOT_PASSWORD: secret
+      # MYSQL_USER: auction-user
+      # MYSQL_PASSWORD: mysecurepassword
     ports:
         - "33061:3306"
     volumes:

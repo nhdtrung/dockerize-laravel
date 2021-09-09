@@ -1,6 +1,5 @@
 FROM php:7.4-fpm
 
-# Copy composer.lock and composer.json
 # COPY composer.lock composer.json /var/www/
 
 # Set working directory
@@ -22,6 +21,10 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     libonig-dev
 
+# Install supervisord
+RUN apt-get update \
+    && apt-get install -y nginx supervisor cron
+
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
@@ -30,6 +33,9 @@ RUN docker-php-ext-install pdo_mysql mysqli mbstring zip exif pcntl
 RUN docker-php-ext-configure gd 
 # --with-gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/
 RUN docker-php-ext-install gd
+
+# Install xdebug
+RUN yes | pecl install xdebug-2.9.1
 
 # Add user for laravel application
 RUN groupadd -g 1000 www
@@ -46,4 +52,6 @@ USER www
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
+
+CMD /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
 CMD ["php-fpm"]
