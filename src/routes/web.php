@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,8 +23,20 @@ Route::fallback(function(){
 });
 
 // Wager APIs for missing understand, dont do that
-Route::namespace('API\V1')->group(function () {
-    Route::post('wagers', 'WagerController@store');
-    Route::post('buy/{wager_id}', 'WagerController@buy');
+Route::group([
+    'namespace' => 'API\V1',
+    'middleware' => 'auth'
+], function () {
     Route::get('wagers', 'WagerController@show');
+    Route::post('wagers', 'WagerController@store');
+    Route::post('wagers/{id}/buy', 'WagerController@buy');
 });
+
+// Route::get('/teams', 'TeamController@index');
+// Route::get('/teams/create', 'TeamController@create');
+// Route::post('/teams/store', 'TeamController@store');
+// Route::get('/teams/{id}', 'TeamController@show');
+// Route::get('/teams/{id}/edit', 'TeamController@edit');
+// Route::put('/teams/{id}/update', 'TeamController@update');
+// Route::delete('/teams/{id}/delete', 'TeamController@delete');
+

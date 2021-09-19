@@ -30,11 +30,8 @@ class WagerController extends Controller
      */
     public function store(StoreRequest $request): JsonResponse
     {
-        $statusCode = 201;
-
-        $result = $this->wagerService->store($request->all());
-
-        return response()->json($result, $statusCode);
+        $result = $this->wagerService->store($request->validate());
+        return response()->json($result, 201);
     }
 
     /**
@@ -47,11 +44,8 @@ class WagerController extends Controller
      */
     public function buy(BuyRequest $request, int $id): JsonResponse
     {
-        $statusCode = 201;
-
-        $result = $this->wagerService->buy($request->all(), $id);
-
-        return response()->json($result, $statusCode);
+        $result = $this->wagerService->buy($request->validate(), $id);
+        return response()->json($result, 201);
     }
 
     /**
@@ -62,10 +56,8 @@ class WagerController extends Controller
      */
     public function show(Request $request): JsonResponse
     {
-        $statusCode = 200;
-
         $resource = $this->wagerService->show($request->all());
-
-        return response()->json(WagerResource::collection($resource), $statusCode);
+        return response()->json(WagerResource::collection($resource), 200);
     }
 }
+

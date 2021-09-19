@@ -1303,3 +1303,210 @@ Did you mean one of these?
 #33 /var/www/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #34 {main}
 "} 
+[2021-09-19 12:44:29] local.ERROR: Command "make:auth" is not defined.
+
+Did you mean one of these?
+    make:channel
+    make:command
+    make:controller
+    make:event
+    make:exception
+    make:factory
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"make:auth\" is not defined.
+
+Did you mean one of these?
+    make:channel
+    make:command
+    make:controller
+    make:event
+    make:exception
+    make:factory
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test at /home/trung/code/dockerize-laravel/src/vendor/symfony/console/Application.php:676)
+[stacktrace]
+#0 /home/trung/code/dockerize-laravel/src/vendor/symfony/console/Application.php(237): Symfony\\Component\\Console\\Application->find()
+#1 /home/trung/code/dockerize-laravel/src/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun()
+#2 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run()
+#3 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run()
+#4 /home/trung/code/dockerize-laravel/src/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#5 {main}
+"} 
+[2021-09-19 13:28:04] local.ERROR: Array to string conversion {"exception":"[object] (ErrorException(code: 0): Array to string conversion at /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35)
+[stacktrace]
+#0 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php(416): Illuminate\\Routing\\RouteFileRegistrar->register()
+#3 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php(374): Illuminate\\Routing\\Router->loadRoutes()
+#4 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(122): Illuminate\\Routing\\Router->group()
+#5 /home/trung/code/dockerize-laravel/src/routes/web.php(30): Illuminate\\Routing\\RouteRegistrar->group()
+#6 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require('/home/trung/cod...')
+#7 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php(416): Illuminate\\Routing\\RouteFileRegistrar->register()
+#8 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php(374): Illuminate\\Routing\\Router->loadRoutes()
+#9 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(122): Illuminate\\Routing\\Router->group()
+#10 /home/trung/code/dockerize-laravel/src/app/Providers/RouteServiceProvider.php(65): Illuminate\\Routing\\RouteRegistrar->group()
+#11 /home/trung/code/dockerize-laravel/src/app/Providers/RouteServiceProvider.php(49): App\\Providers\\RouteServiceProvider->mapWebRoutes()
+#12 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->map()
+#13 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#14 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#15 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#16 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call()
+#17 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(87): Illuminate\\Container\\Container->call()
+#18 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#19 /home/trung/code/dockerize-laravel/src/app/Providers/RouteServiceProvider.php(37): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->boot()
+#20 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->boot()
+#21 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#22 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#23 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#24 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call()
+#25 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(856): Illuminate\\Container\\Container->call()
+#26 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(839): Illuminate\\Foundation\\Application->bootProvider()
+#27 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}()
+#28 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(840): array_walk()
+#29 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#30 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(219): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
+#31 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith()
+#32 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#33 /home/trung/code/dockerize-laravel/src/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#34 {main}
+"} 
+[2021-09-19 13:28:13] local.ERROR: Array to string conversion {"exception":"[object] (ErrorException(code: 0): Array to string conversion at /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35)
+[stacktrace]
+#0 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php(416): Illuminate\\Routing\\RouteFileRegistrar->register()
+#3 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php(374): Illuminate\\Routing\\Router->loadRoutes()
+#4 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(122): Illuminate\\Routing\\Router->group()
+#5 /home/trung/code/dockerize-laravel/src/routes/web.php(30): Illuminate\\Routing\\RouteRegistrar->group()
+#6 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require('/home/trung/cod...')
+#7 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php(416): Illuminate\\Routing\\RouteFileRegistrar->register()
+#8 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php(374): Illuminate\\Routing\\Router->loadRoutes()
+#9 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(122): Illuminate\\Routing\\Router->group()
+#10 /home/trung/code/dockerize-laravel/src/app/Providers/RouteServiceProvider.php(65): Illuminate\\Routing\\RouteRegistrar->group()
+#11 /home/trung/code/dockerize-laravel/src/app/Providers/RouteServiceProvider.php(49): App\\Providers\\RouteServiceProvider->mapWebRoutes()
+#12 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->map()
+#13 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#14 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#15 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#16 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call()
+#17 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(87): Illuminate\\Container\\Container->call()
+#18 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#19 /home/trung/code/dockerize-laravel/src/app/Providers/RouteServiceProvider.php(37): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->boot()
+#20 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->boot()
+#21 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#22 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#23 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#24 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call()
+#25 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(856): Illuminate\\Container\\Container->call()
+#26 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(839): Illuminate\\Foundation\\Application->bootProvider()
+#27 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}()
+#28 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(840): array_walk()
+#29 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#30 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(219): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
+#31 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith()
+#32 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#33 /home/trung/code/dockerize-laravel/src/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#34 {main}
+"} 
+[2021-09-19 13:28:56] local.ERROR: Array to string conversion {"exception":"[object] (ErrorException(code: 0): Array to string conversion at /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35)
+[stacktrace]
+#0 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php(416): Illuminate\\Routing\\RouteFileRegistrar->register()
+#3 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php(374): Illuminate\\Routing\\Router->loadRoutes()
+#4 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(122): Illuminate\\Routing\\Router->group()
+#5 /home/trung/code/dockerize-laravel/src/routes/web.php(30): Illuminate\\Routing\\RouteRegistrar->group()
+#6 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require('/home/trung/cod...')
+#7 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php(416): Illuminate\\Routing\\RouteFileRegistrar->register()
+#8 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php(374): Illuminate\\Routing\\Router->loadRoutes()
+#9 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(122): Illuminate\\Routing\\Router->group()
+#10 /home/trung/code/dockerize-laravel/src/app/Providers/RouteServiceProvider.php(65): Illuminate\\Routing\\RouteRegistrar->group()
+#11 /home/trung/code/dockerize-laravel/src/app/Providers/RouteServiceProvider.php(49): App\\Providers\\RouteServiceProvider->mapWebRoutes()
+#12 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->map()
+#13 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#14 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#15 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#16 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call()
+#17 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(87): Illuminate\\Container\\Container->call()
+#18 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#19 /home/trung/code/dockerize-laravel/src/app/Providers/RouteServiceProvider.php(37): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->boot()
+#20 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->boot()
+#21 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#22 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#23 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#24 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call()
+#25 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(856): Illuminate\\Container\\Container->call()
+#26 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(839): Illuminate\\Foundation\\Application->bootProvider()
+#27 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}()
+#28 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(840): array_walk()
+#29 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#30 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(219): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
+#31 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith()
+#32 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#33 /home/trung/code/dockerize-laravel/src/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#34 {main}
+"} 
+[2021-09-19 13:29:55] local.ERROR: Array to string conversion {"exception":"[object] (ErrorException(code: 0): Array to string conversion at /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35)
+[stacktrace]
+#0 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php(416): Illuminate\\Routing\\RouteFileRegistrar->register()
+#3 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php(374): Illuminate\\Routing\\Router->loadRoutes()
+#4 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(122): Illuminate\\Routing\\Router->group()
+#5 /home/trung/code/dockerize-laravel/src/routes/web.php(31): Illuminate\\Routing\\RouteRegistrar->group()
+#6 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require('/home/trung/cod...')
+#7 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php(416): Illuminate\\Routing\\RouteFileRegistrar->register()
+#8 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php(374): Illuminate\\Routing\\Router->loadRoutes()
+#9 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(122): Illuminate\\Routing\\Router->group()
+#10 /home/trung/code/dockerize-laravel/src/app/Providers/RouteServiceProvider.php(65): Illuminate\\Routing\\RouteRegistrar->group()
+#11 /home/trung/code/dockerize-laravel/src/app/Providers/RouteServiceProvider.php(49): App\\Providers\\RouteServiceProvider->mapWebRoutes()
+#12 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->map()
+#13 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#14 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#15 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#16 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call()
+#17 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(87): Illuminate\\Container\\Container->call()
+#18 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#19 /home/trung/code/dockerize-laravel/src/app/Providers/RouteServiceProvider.php(37): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->boot()
+#20 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->boot()
+#21 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#22 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#23 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#24 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call()
+#25 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(856): Illuminate\\Container\\Container->call()
+#26 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(839): Illuminate\\Foundation\\Application->bootProvider()
+#27 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}()
+#28 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(840): array_walk()
+#29 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#30 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(219): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
+#31 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith()
+#32 /home/trung/code/dockerize-laravel/src/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#33 /home/trung/code/dockerize-laravel/src/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#34 {main}
+"} 
