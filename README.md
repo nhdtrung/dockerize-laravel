@@ -1,6 +1,3 @@
-## Installation
+## How to make it work
 
-> run `bash ./start.sh` to make it work
-
-
-```
+> `sh ./start.sh`
