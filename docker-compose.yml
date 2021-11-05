@@ -5,7 +5,7 @@ services:
   app:
     build:
       context: ./
-      dockerfile: php.dockerfile
+      dockerfile: docker/php/Dockerfile
     depends_on:
       - db
     container_name: app
@@ -24,53 +24,41 @@ services:
 
   #Nginx Service
   webserver:
+    platform: linux/amd64
     image: nginx:alpine
     container_name: webserver
     working_dir: /var/www
     depends_on:
       - app
     ports:
-      - "8001:80"
+      - "80:80"
       - "443:443"
     volumes:
       - ./src/:/var/www
-      - ./logs:/var/log/nginx
+      - ./docker/nginx/logs:/var/log/nginx
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
     networks:
       - app-network
 
   #Database
   db:
-    image: mysql:5.7.22
-    container_name: db 
-    command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci','--default-authentication-plugin=mysql_native_password']
+    # platform: linux/x86_64
+    # image: mysql:5.7
+    image: mariadb:10.5.8
+    container_name: db
+    command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci','--default-authentication-plugin=mysql_native_qlassword']
     environment:
       MYSQL_DATABASE: laravel
       MYSQL_ROOT_PASSWORD: secret
       # MYSQL_USER: auction-user
       # MYSQL_PASSWORD: mysecurepassword
     ports:
-        - "33061:3306"
+        - "3306:3306"
     volumes:
       - ./docker/db/dbdata:/var/lib/mysql
       - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
       - app-network
-
-  composer:
-    build:
-      context: .
-      dockerfile: composer.dockerfile
-    container_name: composer
-    volumes:
-      - ./src:/var/www
-    working_dir: /var/www
-    depends_on:
-      - app
-    # command: ["composer", "composer install --ignore-platform-reqs"]
-    entrypoint: ['composer', '--ignore-platform-reqs']
-    networks:
-      - app-network 
 
 #Docker Networks
 networks:
