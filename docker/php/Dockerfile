@@ -1,7 +1,7 @@
 FROM php:7.4-fpm
 
 # Set working directory
-WORKDIR /var/www
+WORKDIR "${WORKING_DIR}"
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
