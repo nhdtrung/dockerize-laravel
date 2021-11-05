@@ -1,3 +1,4 @@
 /docker/db/dbdata
 /docker/nginx/logs/
 /.idea
+.idea
