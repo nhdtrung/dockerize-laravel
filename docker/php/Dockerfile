@@ -1,7 +1,7 @@
 FROM php:7.4-fpm
 
 # Set working directory
-WORKDIR /var/www
+WORKDIR "${WORKING_DIR}"
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
@@ -36,7 +36,8 @@ RUN docker-php-ext-configure gd
 RUN docker-php-ext-install gd
 
 # Install xdebug
-RUN yes | pecl install xdebug-2.9.1
+RUN yes | pecl install xdebug \
+  && docker-php-ext-enable xdebug
 
 # Add user for laravel application
 RUN groupadd -g 1000 www
